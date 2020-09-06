@@ -1,0 +1,6 @@
+#Если запрос не идет на конкретный файл
+RewriteCond %{REQUEST_FILENAME} !-f
+#Или папку
+RewriteCond %{REQUEST_FILENAME} !-d
+#Тогда мы перенаправляем с флагами [L,QSA] - last, quary string append
+RewriteRule (.*) index.php?$1 [L,QSA]
